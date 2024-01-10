@@ -1,0 +1,12 @@
+<!-- Newapp/templates/upload_resume.html -->
+
+{% extends 'Home.html' %}
+
+{% block content %}
+  <h2>Upload Resume</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload Resume</button>
+  </form>
+{% endblock %}

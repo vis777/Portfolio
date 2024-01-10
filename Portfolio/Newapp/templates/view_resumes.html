@@ -1,0 +1,13 @@
+{% extends 'Home.html' %}
+{% block content %}
+  <h2>View Resumes</h2>
+  {% if resumes %}
+    <ul>
+      {% for resume in resumes %}
+        <li><a href="{% url 'download' resume.id %}">{{ resume.file.name }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No resumes available.</p>
+  {% endif %}
+{% endblock %}
